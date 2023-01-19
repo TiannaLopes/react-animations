@@ -20,7 +20,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 overflow: hidden;
-position:relative;
+position: relative;
 `
 
 const HeroSlide = styled.div`
@@ -28,8 +28,9 @@ z-index: 1;
 width: 100%;
 height: 100%
 `;
+
 const HeroSlider = styled.div`
-position: absolute;
+position: absolute; 
 top:0;
 left:0;
 width:100%
@@ -42,31 +43,31 @@ justify-content: center;
   content: '';
   position: absolute;
   z-index: 2;
-  width: 100vh;
+  width: 100%;
   height: 100vh;
   bottom: 0vh;
   left: 0;
   overflow: hidden;
   opacity: 0.4;
   background: linear-gradient(0deg, 
-  rgba(0,0,0,2)0%,
-  rgba(0,0,0,2)50%,
-  rgba(0,0,0,0.6)100%)
+  rgba(0,0,0,0.2)0%,
+  rgba(0,0,0,0.2)50%,
+  rgba(0,0,0,0.6)100%);
 }
 `;
 const HeroImage = styled.img`
 position: absolute;
 top: 0;
-left:0;
-width: 100vh;
+left: 0;
+width: 100vw;
 height: 100vh;
-object-fit:cover;
+object-fit: cover;
 `;
 const HeroContent = styled.div`
 position: relative;
 z-index: 10;
-display:flex;
-flex-direction:column;
+display: flex;
+flex-direction: column;
 max-width: 1600px;
 width: calc(100% - 100px);
 color: #fff;
@@ -101,7 +102,7 @@ margin-right: 1rem;
 user-select: none;
 transition: 0.3s;
 
-&:hover{
+&:hover {
   background: #cd853f;
   transform: scale(1.05);
 }
@@ -118,7 +119,6 @@ bottom: 50px;
 right: 50px;
 display: flex;
 z-index: 10;
-
 `;
 
 const Hero = ({ slides }) => {
@@ -163,23 +163,23 @@ const Hero = ({ slides }) => {
           return (
             <HeroSlide key={index}>
               {index === current && (
-                       <HeroSlider>
-                <HeroImage src={slide.image} alt={slide.alt}/>
-                <HeroContent>
-                  <h1>{slide.title}</h1>
-                  <p>{slide.price}</p>
-                  <Button to={slide.path} primary='true'
-                    css={`
+                <HeroSlider>
+                  <HeroImage src={slide.image} alt={slide.alt} />
+                  <HeroContent>
+                    <h1>{slide.title}</h1>
+                    <p>{slide.price}</p>
+                    <Button to={slide.path} primary='true'
+                      css={`
                   max-width: 160px;`
-                    }>
-                    {slide.label}
-                    <Arrow/>
-                  </Button>
+                      }>
+                      {slide.label}
+                      <Arrow />
+                    </Button>
                   </HeroContent>
                 </HeroSlider>
-                    )}
-              </HeroSlide>   
-               )
+              )}
+            </HeroSlide>
+          );
         })}
         
         <SliderButtons>

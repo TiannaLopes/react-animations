@@ -13,7 +13,6 @@ padding: 1rem 2rem;
 z-index: 100;
 position: fixed;
 width: 100%;
-background: #000000;
 `
 const NavLink = css`
 color: #FFF;
@@ -40,13 +39,13 @@ cursor: pointer;
 position: absolute;
 top: 0;
 right: 0;
-transform: translate(-50%,35%);
+transform: translate(-50%,25%);
 }
 `
 const NavMenu = styled.div`
 display: flex;
 align-items: center;
-margin-reight: -48px; 
+margin-right: -48px; 
 
 @media screen and (max-width: 768px){
     display: none;

@@ -17,7 +17,7 @@ function App() {
       <GlobalStyle />
       <Navbar toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle}/>
-      <Hero slides={SliderData} />
+      <Hero slides={SliderData}/>
       <InfoSection {...InfoData}/>
     </>
   );
